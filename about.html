@@ -1,59 +1,64 @@
 ---
 layout: page
 title: "About"
-description: "Hey, this is BY."
-header-img: "img/post-bg-rwd.jpg"
+description: "Hey, this is XiaoZi."
+header-img: "img/bg-about.jpg"
 ---
 
 <!-- Language Selector -->
 <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
     <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
+    <option value="1"> 英语 English </option>
+    <option value="2"> 法语 français </option>
 </select>
 
 <!-- Chinese Version -->
 <div class="zh post-container">
 
     <!--copied from markdown -->
-    <blockquote><p>冰冻三尺 非一日之寒，<br>
-    积土成山 非斯须之作</p></blockquote>
+    <blockquote><p>学无止境</p></blockquote>
 
-    <p>Hey，我是<strong>柏荧(BY)</strong>，一只iOS程序猿，现在厦门工作。</p>
+    <p>Hey，我是<strong>紫曌(XiaoZi)</strong>，想转行当码农的通信电工狗。</p>
+    
+    <p>复旦大学2015届通信科学与工程系毕业生，巴黎高科 ENSTA ParisTech 2017届机器人与嵌入式系统毕业生，目前就读于巴黎第十一大学硕士二年级，Machine Learning，Information，Content专业。</p>
 
-    <p>这是我的利用 <a href="https://pages.github.com/">GitHub Pages</a> 与 <a href="http://jekyll.com.cn/">Jekyll</a> 搭建的 个人博客。我在GitHub主页<a href="https://github.com/qiubaiying">👉GitHub·BY</a> 与 简书主页<a href="https://http://www.jianshu.com/u/e71990ada2fd">👉BY</a>。</p>
-
-    <p>工作、学习之余，我特别喜欢运动，跑步、健身和自由搏击都是我特别喜欢的运动。</p>
+    <p>这里是记录自己成长的地方，希望能与你共勉。</p>
 
     <p></p>
+
     
-    <h5>Talks</h5>
+    <!-- <h5>Talks</h5>
 
     <ul>
     <li><a href="https://github.com">GitHub</a></li>
     <li><a href="http://jekyll.com.cn/">jekyll</a></li>
     <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-    <li><a href="http://huangxuan.me/">Hux</a></li>    </ul>
+    <li><a href="http://huangxuan.me/">Hux</a></li>    </ul> -->
 </div>
 
 <!-- English Version -->
 <div class="en post-container">
-    <blockquote><p>Yet another iOS Developer. <br>
-    Yet another Life-long Student.</p></blockquote>
+    <blockquote><p>Knowledge is infinite.</p></blockquote>
 
-    <p>Hi, I am <strong>Baiying Qiu</strong>，you can call me <strong>BY</strong>. I am an iOS software engineer and currently working in Xiamen</p>
+    <p>Hi, I am <strong>Zizhao LI</strong>，want to become a software developer.</p>
 
-    <p>This is my personal blog, through making Github Pages and Jekyll.My GitHub  👉 <a href="http://github.com/qiubaiying">Github·BY</a>.</p>
+    <p>I graduated from Fudan University in 2015, majored in communication science and engineering. Engineering student of ENSTA Paristech of promo 2017 with major of robotics and embedded system. Now, I am a second year master student in University Paris-Sud(University of Paris XI) in Machine Learning，Information，Content.</p>
     
-    <p>I am a sports enthusiast, I like fitness, running and boxing.</p>
+    <p>This is a place to record my growth, hope can grow up with you.</p>
 
-    <h5>Talks</h5>
+</div>
 
-    <ul>
-    <li><a href="https://github.com">GitHub</a></li>
-    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
-    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-    <li><a href="https://qiubaiying.github.io">BY</a></li>
-    </ul>
+
+<!-- French Version -->
+<div class="fr post-container">
+    <blockquote><p>Apprendre sans arrêt.</p></blockquote>
+
+    <p>Salut, Je suis <strong>Zizhao LI</strong>，sur la route de devenir un développeur de logiciel.</p>
+
+    <p>Je suis Université Fudan promo 2015, spécialisé en télécommunications, ENSTA ParisTech promo 2017, spécialisé en Robotique et Système Embarqué. Maintenant, je suis étudiante en Apprendissage, Information et Contenu à Université Paris-Sud.</p>
+    
+    <p>C'est un endroit que je note mon développement, dans l'espoir de progresser avec vous.</p>
+
 </div>
 
 <!-- Handle Language Change -->
@@ -61,6 +66,7 @@ header-img: "img/post-bg-rwd.jpg"
     // get nodes
     var $zh = document.querySelector(".zh");
     var $en = document.querySelector(".en");
+    var $fr = document.querySelector(".fr");
     var $select = document.querySelector("select");
 
     // bind hashchange event
@@ -69,16 +75,24 @@ header-img: "img/post-bg-rwd.jpg"
     // handle render
     function _render(){
         var _hash = window.location.hash;
+        // fr
+        if(_hash == "#fr"){
+            $select.selectedIndex = 2;
+            $fr.style.display = "block";
+            $en.style.display = "none";
+            $zh.style.display = "none";
         // en
-        if(_hash == "#en"){
+        }else if(_hash == "#en"){
             $select.selectedIndex = 1;
             $en.style.display = "block";
+            $fr.style.display = "none";
             $zh.style.display = "none";
         // zh by default
         }else{
             // not trigger onChange, otherwise cause a loop call.
             $select.selectedIndex = 0;
             $zh.style.display = "block";
+            $fr.style.display = "none";
             $en.style.display = "none";
         }
     }
@@ -87,8 +101,10 @@ header-img: "img/post-bg-rwd.jpg"
     function onLanChange(index){
         if(index == 0){
             window.location.hash = "#zh"
-        }else{
+        }else if(index == 1){
             window.location.hash = "#en"
+        }else{
+            window.location.hash = "#fr"
         }
     }
 
@@ -103,7 +119,7 @@ header-img: "img/post-bg-rwd.jpg"
 <div class="comment">
     <!-- This id is used for indexing my loss comments forcedly -->
     <div class="ds-thread"
-    {% if site.duoshuo_username == "qiubaiying" %}
+    {% if site.duoshuo_username == "zizhaoli" %}
         data-thread-id="0ee040117ec56f17aa7e2523d1eae19b"
     {% else %}
     <!-- U can just use this key generated to index comments at page about -->
