@@ -11,7 +11,7 @@ github_repo: "https://github.com/zizhaoLi/zizhaoLi.github.io.git" # you code rep
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "和拖延癌告别"
+sidebar-about-description: "努力和拖延癌告别"
 sidebar-avatar: /img/Photo_RDD_Zizhao_LI_3.JPG      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
