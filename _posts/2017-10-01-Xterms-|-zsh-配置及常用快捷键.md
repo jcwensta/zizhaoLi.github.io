@@ -32,7 +32,6 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
 # enables colorfor iTerm
 export TERM=xterm-color
-
 ```
 
 到这里为止，基本就完成了对iTerm2的配色方案的配置，可以使用了。但是如果想要如下图的加箭头的界面，还需要借助`zsh`进行配置。
