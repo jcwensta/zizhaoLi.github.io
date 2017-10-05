@@ -12,7 +12,7 @@ github_repo: "https://github.com/jingcheng-WU/jingcheng-WU.github.io.git" # you 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Optimization = the world"
-sidebar-avatar: /img/Louvre.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/Annecy.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
