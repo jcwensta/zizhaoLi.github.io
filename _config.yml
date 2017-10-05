@@ -1,10 +1,10 @@
 # Site settings
-title: Xiaozi Blog
-SEOTitle: 紫曌的博客 | Xiaozi Blog
+title: JingchengWU Blog
+SEOTitle: 吴京城的博客 | JingchengWU Blog
 header-img: img/background.jpg
-email: sharoncarl688@gmail.com
+email: jcwensta@gmail.com
 description: "Knowledge is infinite."
-keyword: "Xiaozi, Xiaozi Blog, 紫曌的博客, ZizhaoLi, 李紫曌, data, Machine Learning"
+keyword: "jingcheng, jingchengWU blog, 紫曌的博客, jingchengWU, 吴京城, data, Machine learning, Optimization"
 url: "http://zizhaoLi.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/jcwensta/jcwensta.github.io.git" # you code repository
